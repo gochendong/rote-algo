@@ -6,9 +6,9 @@ def f(arr: list) -> list:
     if not arr:
         return []
     base = arr[0]
-    left = f([i for i in arr[1:] if i <= base])
-    right = f([i for i in arr[1:] if i > base])
-    return left + [base] + right
+    lft = f([i for i in arr[1:] if i <= base])
+    rgt = f([i for i in arr[1:] if i > base])
+    return lft + [base] + rgt
 
 
 if __name__ == "__main__":
