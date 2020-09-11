@@ -21,5 +21,5 @@ def f(arr: list) -> list:
 
 if __name__ == "__main__":
     import doctest
-    doctest.testmod()
 
+    doctest.testmod()
