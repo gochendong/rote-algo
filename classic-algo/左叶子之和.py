@@ -1,22 +1,20 @@
 """
-给定一个二叉树，返回它的中序 遍历。
+计算给定二叉树的所有左叶子之和。
 
-示例:
+示例：
 
-输入: [1,null,2,3]
-   1
-    \
-     2
-    /
-   3
+    3
+   / \
+  9  20
+    /  \
+   15   7
 
-输出: [1,3,2]
+在这个二叉树中，有两个左叶子，分别是 9 和 15，所以返回 24
 
 来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/binary-tree-inorder-traversal
+链接：https://leetcode-cn.com/problems/sum-of-left-leaves
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 """
-from typing import List
 
 
 # Definition for a binary tree node.
@@ -28,15 +26,16 @@ class TreeNode:
 
 
 class Solution:
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
-        res = []
+    def sumOfLeftLeaves(self, root: TreeNode) -> int:
+        self.res = 0
 
         def dfs(node):
             if not node:
                 return
+            if node.left and not node.left.left and not node.left.right:
+                self.res += node.left.val
             dfs(node.left)
-            res.append(node.val)
             dfs(node.right)
 
         dfs(root)
-        return res
+        return self.res
