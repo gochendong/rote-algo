@@ -45,7 +45,8 @@ class Solution:
                     spaces.append((i, j))
                 else:
                     digit = int(board[i][j]) - 1
-                    row[i][digit] = column[j][digit] = block[i // 3][j // 3][digit] = True
+                    row[i][digit] = column[j][digit] = block[i // 3][
+                        j // 3][digit] = True
 
         def dfs(pos):
             nonlocal valid
@@ -54,11 +55,14 @@ class Solution:
                 return
             i, j = spaces[pos]
             for digit in range(9):
-                if row[i][digit] == column[j][digit] == block[i // 3][j // 3][digit] == False:
+                if row[i][digit] == column[j][digit] == block[i // 3][
+                        j // 3][digit] == False:
                     board[i][j] = str(digit + 1)
-                    row[i][digit] = column[j][digit] = block[i // 3][j // 3][digit] = True
+                    row[i][digit] = column[j][digit] = block[i // 3][
+                        j // 3][digit] = True
                     dfs(pos + 1)
-                    row[i][digit] = column[j][digit] = block[i // 3][j // 3][digit] = False
+                    row[i][digit] = column[j][digit] = block[i // 3][
+                        j // 3][digit] = False
                 if valid:
                     return
 

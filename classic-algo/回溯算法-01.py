@@ -4,14 +4,15 @@
 candidates 中的每个数字在每个组合中只能使用一次。
 
 来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/combination-sum-ii
+链接：
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 """
 from typing import List
 
 
 class Solution:
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum2(self, candidates: List[int],
+                        target: int) -> List[List[int]]:
         res = []
         candidates.sort()
 
