@@ -44,7 +44,7 @@ def f3(n: int) -> int:
     55
     """
     if n <= 1:
-        return n
+        return n  # 递归必然有一个终止的return
     return f3(n - 1) + f3(n - 2)
 
 
